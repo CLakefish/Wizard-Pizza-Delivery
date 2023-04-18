@@ -13,7 +13,13 @@ Room* Room0_Build()
 {
 	Room* room = NULL;
 
-	room = Room_Create("You're in your Pizza Delivery vehicle, (Used Red PT Cruiser) you finally made it to your destination.\n\"What kind of guy lives in a tower in the middle of nowhere on a steep cliff?\"\nYou look at the pizza, and see there is a list of special instructions carved in the pepperoni.\n\n \"If you make it to my house, please unlock the door with the key hidden under the mat and bring it up-stairs. My legs don't work as good as they used to!\"\n");
+	room = Room_Create("You're in your Pizza Delivery vehicle, (Used Red PT Cruiser) you finally made it to your destination.\n\"What kind of guy lives in a tower in the middle of nowhere on a steep cliff?\"\nYou look at the pizza, and see there is a list of special instructions.\n\n \"\"\n");
+
+	/*
+	Delivery Instructions:
+	
+	Once you make it to my house, please unlock the door with the key hidden under the mat and bring it upstairs. My legs don't work as good as they used to!
+	*/
 
 	Room_AddRoomExit(room, "Car Door", 1);
 	Room_AddRoomExitShortcut(room, "door", 1);
@@ -31,7 +37,7 @@ Room* Room1_Build()
 {
 	Room* room = NULL;
 
-	room = Room_Create("You step outside of your car and walk up to the front door, the tower looming over you.\n You look down to see the doormat, its marked with the words \"i don no\" with a photo of Jerry Seinfeld shrugging. \n\n You can either get the key like the order said, or you can leave it here and call it a night.\n");
+	room = Room_Create("You step outside of your car and walk up to the front door. The tower looms over you.\n You look down to see the doormat, it's marked with the words \"A Wizard's Welcome!\"\n\nYou can either get the key like the delivery instructions said, or you can leave it here and call it a night.\n");
 
 	Room_AddRoomExit(room, "Leave", 7);
 	Room_AddRoomExitShortcut(room, "leave", 7);
