@@ -13,9 +13,9 @@ Room* Room0_Build()
 {
 	Room* room = NULL;
 
-	room = Room_Create("You're in your Pizza Delivery vehicle, (Used Red PT Cruiser) you finally made it to your destination.\n 'What kind of guy lives in a tower in the middle of nowhere on a steep cliff?' \n You look at the pizza, and see there is a list of special instructions carved in the pepperoni.\n\n 'If you make it to my house, please unlock the door with the key hidden under the mat and bring it up-stairs. My legs don't work as good as they used too!'");
+	room = Room_Create("You're in your Pizza Delivery vehicle, (Used Red PT Cruiser) you finally made it to your destination.\n\"What kind of guy lives in a tower in the middle of nowhere on a steep cliff?\"\nYou look at the pizza, and see there is a list of special instructions carved in the pepperoni.\n\n \"If you make it to my house, please unlock the door with the key hidden under the mat and bring it up-stairs. My legs don't work as good as they used to!\"\n");
 
-	Room_AddRoomExit(room, "Door", 1);
+	Room_AddRoomExit(room, "Car Door", 1);
 	Room_AddRoomExitShortcut(room, "d", 1);
 
 	ItemList_AddItem(Room_GetItemList(room), ExitDoor_Build());
