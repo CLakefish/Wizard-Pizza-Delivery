@@ -16,6 +16,8 @@ Room* Room0_Build()
 	room = Room_Create("You're in your Pizza Delivery vehicle, (Used Red PT Cruiser) you finally made it to your destination.\n\"What kind of guy lives in a tower in the middle of nowhere on a steep cliff?\"\nYou look at the pizza, and see there is a list of special instructions carved in the pepperoni.\n\n \"If you make it to my house, please unlock the door with the key hidden under the mat and bring it up-stairs. My legs don't work as good as they used to!\"\n");
 
 	Room_AddRoomExit(room, "Car Door", 1);
+	Room_AddRoomExitShortcut(room, "door", 1);
+	Room_AddRoomExitShortcut(room, "car door", 1);
 	Room_AddRoomExitShortcut(room, "d", 1);
 
 	ItemList_AddItem(Room_GetItemList(room), ExitDoor_Build());
@@ -27,33 +29,14 @@ Room* Room0_Build()
 /* TODO REQUIRED: Build room 1 */
 Room* Room1_Build()
 {
-	/* Pre-declare a room pointer which we will use to build the new room */
 	Room* room = NULL;
-	
-	/* TODO REQUIRED: Call Room_Create with the Room 1 description:
-	"This is room 1.  There is a large mirror here, and it shimmers as you approach.\n" */
 
-	room = Room_Create("This is room 1.\n\n There is a large mirror here, and it shimmers as you approach. \n");
+	room = Room_Create("You step outside of your car and walk up to the front door, the tower looming over you.\n You look down to see the doormat, its marked with the words \"i don no\" with a photo of Jerry Seinfeld shrugging. \n\n You can either get the key like the order said, or you can leave it here and call it a night.\n");
 
-	/* TODO REQUIRED: Add an Exit "through the mirror" to Room 2 */
+	Room_AddRoomExit(room, "Leave", 7);
+	Room_AddRoomExitShortcut(room, "leave", 7);
+	Room_AddRoomExitShortcut(room, "l", 7);
 
-	Room_AddRoomExit(room, "through mirror", 2);
-	/* TODO BASIC: Add exit shortcuts for "through mirror" and "mirror" */
-
-	Room_AddRoomExitShortcut(room, "mirror", 2);
-	Room_AddRoomExitShortcut(room, "m", 2);
-
-	/* TODO REQUIRED: Add an Exit "south" back to Room 0 */
-	/* TODO BASIC: Add room exit shortcut for "s" */
-
-	Room_AddRoomExit(room, "south", 0);
-	Room_AddRoomExitShortcut(room, "s", 0);
-
-
-	/* TODO REQUIRED: Add a brick to the list of items in the room */
-	ItemList_AddItem(Room_GetItemList(room), Brick_Build(room));
-
-	/* return the new room */
 	return room;
 }
 
@@ -91,12 +74,11 @@ Room* Room3_Build()
 	return room;
 }
 
-
 WorldData* CreateInitialWorldData()
 {
 	WorldData* worldData;
 
-	int roomCount = 4;
+	int roomCount = 7;
 
 	/* create the new WorldData object with 3 rooms */
 	worldData = WorldData_Create("Welcome to my GAM100 Game!\n\n", roomCount);
