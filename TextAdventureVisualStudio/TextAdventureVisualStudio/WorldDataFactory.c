@@ -39,9 +39,16 @@ Room* Room1_Build()
 
 	room = Room_Create("You step outside of your car and walk up to the front door. The tower looms over you.\n You look down to see the doormat, it's marked with the words \"A Wizard's Welcome!\"\n\nYou can either get the key like the delivery instructions said, or you can leave it here and call it a night.\n");
 
+	//the difference between Room_AddRoomExit and Room_AddRoomExitShortcut is that shortcut does not appear in the help menu
+	Room_AddRoomExit(room, "exit", 7);
 	Room_AddRoomExitShortcut(room, "leave", 7);
 	Room_AddRoomExitShortcut(room, "l", 7);
-	Room_AddRoomExitShortcut(room, "exit", 7);
+
+
+	//todo: denial functionality: do not let them go through if they do not have a key
+	Room_AddRoomExit(room, "door", 2);
+	Room_AddRoomExitShortcut(room, "north", 2);
+	Room_AddRoomExitShortcut(room, "n", 2);
 
 	return room;
 }
