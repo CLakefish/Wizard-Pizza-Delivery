@@ -1,75 +1,25 @@
-/******************************************************************************
-filename    WorldDataFactory.c
-author      Justin Chambers
-DP email    justin.chambers@digipen.edu
-course      GAM100 ** Do not use this code in your team project
-
-Brief Description:
-This file defines the WorldData factory, which creates the WorldData objects used
-in this game.
-
-This could be used to create default states as well as loaded state.
-
-******************************************************************************/
-#include "WorldDataFactory.h" /* Function declarations */
-#include "WorldData.h" /* WorldData_Create, WorldData_SetRoom */
-#include "Room.h" /* Room_Create, Room_AddRoomExit, Room_GetItemList */
-#include "ItemList.h" /* ItemList_Add */
-#include "BrickFunctions.h" /* Brick_Build */
-#include "GoldPieceFunctions.h" /* GoldPiece_Build */
-#include "ExitDoorFunctions.h" /* ExitDoor_Build */
-
-
-
-/******************************************************************************
-	Build room TEMPLATE
-    Use this example function to build additional rooms
-******************************************************************************/
-Room* RoomN_Build()
-{
-	/* Pre-declare a room pointer which we will use to build the new room */
-	Room* room;
-
-	/* Create the room
-	   include an initial room description */
-	room = Room_Create("DEBUG: This is a template - Include a description for the room here\n");
-
-	/* Exits
-	   add one or more exits to allow navigation between rooms */
-	Room_AddRoomExit(room, "north", 1);  /* 1 = the room index this exit connects to */
-
-	/* Items
-	   add items to the room */
-	ItemList_AddItem(Room_GetItemList(room), ExitDoor_Build());
-
-	/* Return the new room */
-	return room;
-}
+﻿
+#include "WorldDataFactory.h" 
+#include "WorldData.h" 
+#include "Room.h" 
+#include "ItemList.h"
+#include "BrickFunctions.h"
+#include "GoldPieceFunctions.h" 
+#include "ExitDoorFunctions.h" 
 
 
 /* TODO REQUIRED: Build room 0 */
 Room* Room0_Build()
 {
-	/* Pre-declare a room pointer which we will use to build the new room */
 	Room* room = NULL;
 
-	/* TODO REQUIRED: Call Room_Create with the Room 1 description:
-	"This is room 0. It is a display room with a cage in the middle. You can see a jeweled egg inside the cage.  There is a crack in the west wall, but you can't fit through it from this side.\n" */
+	room = Room_Create("You're in your Pizza Delivery vehicle, (Used Red PT Cruiser) you finally made it to your destination.\n 'What kind of guy lives in a tower in the middle of nowhere on a steep cliff?' \n You look at the pizza, and see there is a list of special instructions carved in the pepperoni.\n\n 'If you make it to my house, please unlock the door with the key hidden under the mat and bring it up-stairs. My legs don't work as good as they used too!'");
 
-	room = Room_Create("This is room 0.\n\nDisplay room with a cage in the middle holding a jeweled egg inside. Theres a crack in the west wall, but you can't fit in from this side\n");
+	Room_AddRoomExit(room, "Door", 1);
+	Room_AddRoomExitShortcut(room, "d", 1);
 
-	/* TODO REQUIRED: Add an Exit "north" to Room 1 */
-	/* TODO BASIC: Add room exit shortcut for "n" */
-
-	Room_AddRoomExit(room, "north", 1);
-	Room_AddRoomExitShortcut(room, "n", 1);
-
-	/* TODO REQUIRED: add an exit door to the list of items in the room, ExitDoor_Build() */
 	ItemList_AddItem(Room_GetItemList(room), ExitDoor_Build());
 
-	/* TODO ADVANCED: (not required) update the description and add a room exit to the "east" */
-
-	/* return the new room */
 	return room;
 }
 
@@ -141,20 +91,11 @@ Room* Room3_Build()
 	return room;
 }
 
-/* TODO ADVANCED: Build room 3 */
-/* TODO ADVANCED: Build room 4 */
 
-
-/* ------------------------------------------------------- */
-/* Create the world data for a new game */
-/* ------------------------------------------------------- */
 WorldData* CreateInitialWorldData()
 {
-	/* The new world data */
 	WorldData* worldData;
 
-	/* TODO REQUIRED: update room count to match the number of rooms you have created and added to the world
-	   if this number doesn't match then your game will either crash or you will end up stuck in a broken room with no exits */
 	int roomCount = 4;
 
 	/* create the new WorldData object with 3 rooms */
@@ -162,12 +103,10 @@ WorldData* CreateInitialWorldData()
 
 	/* build each room and assign them to the world data */
 	WorldData_SetRoom(worldData, 0, Room0_Build());
-	/* TODO REQUIRED: add rooms 1 and 2 to the world data */
 
 	WorldData_SetRoom(worldData, 1, Room1_Build());
 	WorldData_SetRoom(worldData, 2, Room2_Build());
 	WorldData_SetRoom(worldData, 3, Room3_Build());
-	/* TODO ADVANCED: add additional advanced rooms */
 
 	/* return the new object */
 	return worldData;

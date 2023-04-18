@@ -52,7 +52,7 @@ int main()
 	while (gameState->isRunning)
 	{
 		/* print command prompt */
-		printf("\nWhat is your command?\n>> ");
+		printf("\nWhat do you do?\n>> ");
 
 		/* accept user input */
 		ParseCommand(GetDefaultInputFunc(), &command);
