@@ -39,9 +39,9 @@ Room* Room1_Build()
 
 	room = Room_Create("You step outside of your car and walk up to the front door. The tower looms over you.\n You look down to see the doormat, it's marked with the words \"A Wizard's Welcome!\"\n\nYou can either get the key like the delivery instructions said, or you can leave it here and call it a night.\n");
 
-	Room_AddRoomExit(room, "Leave", 7);
 	Room_AddRoomExitShortcut(room, "leave", 7);
 	Room_AddRoomExitShortcut(room, "l", 7);
+	Room_AddRoomExitShortcut(room, "exit", 7);
 
 	return room;
 }
