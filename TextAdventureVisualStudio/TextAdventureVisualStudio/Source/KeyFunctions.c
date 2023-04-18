@@ -33,11 +33,11 @@ void Key_Take(CommandContext context, GameState* gameState, WorldData* worldData
 	/* check if the egg has already been scored */
 	if (!GameFlags_IsInList(gameState->gameFlags, "keyScored"))
 	{
-		/* tell the user that something cool happens when they pick up the egg */
+		/* tell the user that something cool happens when they pick up the key */
 		printf("You got $0.10 extra as a tip! \n");
 		/* add to the user's score */
 		GameState_ChangeScore(gameState, 0.10);
-		/* the egg has not been scored, so mark the flag */
+		/* the key has not been scored, so mark the flag */
 		gameState->gameFlags = GameFlags_Add(gameState->gameFlags, "keyScored");
 	}
 }
@@ -45,6 +45,6 @@ void Key_Take(CommandContext context, GameState* gameState, WorldData* worldData
 /* Build a "egg" object */
 Item* Key_Build()
 {
-	/* Create a "egg" item, using the functions defined in this file */
+	/* Create a "key" item, using the functions defined in this file */
 	return Item_Create("key", "A rusty old key, marked with strange runes. \n", true, NULL, Egg_Take, Egg_Drop);
 }
