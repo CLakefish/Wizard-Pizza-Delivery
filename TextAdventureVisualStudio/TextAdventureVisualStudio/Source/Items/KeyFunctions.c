@@ -46,5 +46,5 @@ void Key_Take(CommandContext context, GameState* gameState, WorldData* worldData
 Item* Key_Build()
 {
 	/* Create a "key" item, using the functions defined in this file */
-	return Item_Create("key", "A rusty old key, marked with strange runes. \n", true, NULL, Key_Take);
+	return Item_Create("key", "A rusty old key, marked with strange runes. \n", true, NULL, Key_Take, NULL);
 }
