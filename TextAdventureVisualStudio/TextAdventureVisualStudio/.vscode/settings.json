@@ -1,5 +1,9 @@
 {
     "files.associations": {
-        "eggfunctions.h": "c"
+        "eggfunctions.h": "c",
+        "brickfunctions.h": "c",
+        "keydoorfunctions.h": "c",
+        "gamestate.h": "c",
+        "itemlist.h": "c"
     }
 }
