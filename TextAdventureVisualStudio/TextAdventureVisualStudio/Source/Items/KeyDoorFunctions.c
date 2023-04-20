@@ -59,5 +59,5 @@ void KeyDoor_Use(CommandContext context, GameState* gameState, WorldData* worldD
 Item* KeyDoor_Build()
 {
 	/* Create a "exit door" item, using the functions defined in this file */
-	return Item_Create("exit door", "The door is locked.\n", false, KeyDoor_Use, NULL, NULL);
+	return Item_Create("door", "The door is locked.\n", false, KeyDoor_Use, NULL, NULL);
 }

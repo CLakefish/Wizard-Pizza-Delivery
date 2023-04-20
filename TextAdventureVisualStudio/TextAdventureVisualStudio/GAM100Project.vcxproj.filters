@@ -49,32 +49,38 @@
     <ClCompile Include="Source\stdafx.c">
       <Filter>Platform</Filter>
     </ClCompile>
-    <ClCompile Include="Source\BrickFunctions.c">
-      <Filter>World Data\Item Functions</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\EggFunctions.c">
-      <Filter>World Data\Item Functions</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\ExitDoorFunctions.c">
-      <Filter>World Data\Item Functions</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\GoldPieceFunctions.c">
-      <Filter>World Data\Item Functions</Filter>
-    </ClCompile>
     <ClCompile Include="Source\Item.c">
-      <Filter>World Data</Filter>
+      <Filter>WorldData</Filter>
     </ClCompile>
     <ClCompile Include="Source\ItemList.c">
-      <Filter>World Data</Filter>
+      <Filter>WorldData</Filter>
     </ClCompile>
     <ClCompile Include="Source\Room.c">
-      <Filter>World Data</Filter>
+      <Filter>WorldData</Filter>
     </ClCompile>
     <ClCompile Include="Source\RoomExit.c">
-      <Filter>World Data</Filter>
+      <Filter>WorldData</Filter>
     </ClCompile>
     <ClCompile Include="Source\WorldData.c">
-      <Filter>World Data</Filter>
+      <Filter>WorldData</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Items\BrickFunctions.c">
+      <Filter>WorldData\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Items\EggFunctions.c">
+      <Filter>WorldData\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Items\ExitDoorFunctions.c">
+      <Filter>WorldData\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Items\GoldPieceFunctions.c">
+      <Filter>WorldData\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Items\KeyDoorFunctions.c">
+      <Filter>WorldData\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Items\KeyFunctions.c">
+      <Filter>WorldData\Items</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -141,43 +147,46 @@
     <ClInclude Include="Source\targetver.h">
       <Filter>Platform</Filter>
     </ClInclude>
-    <ClInclude Include="Source\BrickFunctions.h">
-      <Filter>World Data\Item Functions</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\EggFunctions.h">
-      <Filter>World Data\Item Functions</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\ExitDoorFunctions.h">
-      <Filter>World Data\Item Functions</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\GoldPieceFunctions.h">
-      <Filter>World Data\Item Functions</Filter>
-    </ClInclude>
     <ClInclude Include="Source\Item.h">
-      <Filter>World Data</Filter>
+      <Filter>WorldData</Filter>
     </ClInclude>
     <ClInclude Include="Source\ItemList.h">
-      <Filter>World Data</Filter>
+      <Filter>WorldData</Filter>
     </ClInclude>
     <ClInclude Include="Source\Room.h">
-      <Filter>World Data</Filter>
+      <Filter>WorldData</Filter>
     </ClInclude>
     <ClInclude Include="Source\RoomExit.h">
-      <Filter>World Data</Filter>
+      <Filter>WorldData</Filter>
     </ClInclude>
     <ClInclude Include="Source\WorldData.h">
-      <Filter>World Data</Filter>
+      <Filter>WorldData</Filter>
     </ClInclude>
     <ClInclude Include="Source\WorldDataFactory.h">
-      <Filter>World Data</Filter>
+      <Filter>WorldData</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Items\BrickFunctions.h">
+      <Filter>WorldData\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Items\EggFunctions.h">
+      <Filter>WorldData\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Items\ExitDoorFunctions.h">
+      <Filter>WorldData\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Items\GoldPieceFunctions.h">
+      <Filter>WorldData\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Items\KeyDoorFunctions.h">
+      <Filter>WorldData\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Items\KeyFunctions.h">
+      <Filter>WorldData\Items</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Command Handling">
       <UniqueIdentifier>{3c6a6e39-d98e-49bf-a20b-d61bce50ea2d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="World Data">
-      <UniqueIdentifier>{8a0a8938-f1a9-4b62-85dc-7387fb6de452}</UniqueIdentifier>
     </Filter>
     <Filter Include="Game State">
       <UniqueIdentifier>{729e4178-11ed-4e88-b5f3-d9e92d73f4a1}</UniqueIdentifier>
@@ -188,7 +197,10 @@
     <Filter Include="Commands">
       <UniqueIdentifier>{52165ef7-ba90-4cb9-8da3-5b251f3f7f83}</UniqueIdentifier>
     </Filter>
-    <Filter Include="World Data\Item Functions">
+    <Filter Include="WorldData">
+      <UniqueIdentifier>{8a0a8938-f1a9-4b62-85dc-7387fb6de452}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="WorldData\Items">
       <UniqueIdentifier>{d3a6b694-c6d2-4ac5-be41-7e77fee84df1}</UniqueIdentifier>
     </Filter>
   </ItemGroup>

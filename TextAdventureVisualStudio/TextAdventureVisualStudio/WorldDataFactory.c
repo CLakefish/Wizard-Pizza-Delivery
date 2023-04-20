@@ -3,9 +3,13 @@
 #include "WorldData.h" 
 #include "Room.h" 
 #include "ItemList.h"
-#include "BrickFunctions.h"
-#include "GoldPieceFunctions.h" 
-#include "ExitDoorFunctions.h" 
+
+
+//todo: GameItems.h
+#include "Items/BrickFunctions.h"
+#include "Items/GoldPieceFunctions.h" 
+#include "Items/KeyFunctions.h" 
+#include "Items/KeyDoorFunctions.h" 
 
 
 /* TODO REQUIRED: Build room 0 */
@@ -26,8 +30,6 @@ Room* Room0_Build()
 	Room_AddRoomExitShortcut(room, "car door", 1);
 	Room_AddRoomExitShortcut(room, "d", 1);
 
-	ItemList_AddItem(Room_GetItemList(room), ExitDoor_Build());
-
 	return room;
 }
 
@@ -44,8 +46,9 @@ Room* Room1_Build()
 	Room_AddRoomExitShortcut(room, "leave", 7);
 	Room_AddRoomExitShortcut(room, "l", 7);
 
+	ItemList_AddItem(Room_GetItemList(room), Key_Build());
+	ItemList_AddItem(Room_GetItemList(room), KeyDoor_Build());
 
-	//todo: denial functionality: do not let them go through if they do not have a key
 	Room_AddRoomExit(room, "door", 2);
 	Room_AddRoomExitShortcut(room, "north", 2);
 	Room_AddRoomExitShortcut(room, "n", 2);

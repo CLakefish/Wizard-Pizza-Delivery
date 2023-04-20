@@ -1,11 +1,9 @@
 /******************************************************************************
-filename    ExitDoorFunctions.h
-author      Matthew Picioccio
-DP email    mattpic@digipen.edu
-course      GAM100 ** Do not use this code in your team project
+filename    KeyDoorFunctions.h
+author      Preston Campbell
 
 Brief Description:
-This file declares the functions to create a specific item, the "exit door".
+This file declares the functions to create a specific item, the "key door".
 
 ******************************************************************************/
 #pragma once

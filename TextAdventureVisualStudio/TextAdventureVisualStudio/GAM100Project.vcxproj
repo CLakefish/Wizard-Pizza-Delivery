@@ -84,7 +84,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Source\BrickFunctions.h" />
     <ClInclude Include="Source\CommandContext.h" />
     <ClInclude Include="Source\CommandData.h" />
     <ClInclude Include="Source\CommandHandler.h" />
@@ -93,18 +92,21 @@
     <ClInclude Include="Source\CommandListFactory.h" />
     <ClInclude Include="Source\CommandTypes.h" />
     <ClInclude Include="Source\DropCommandHandler.h" />
-    <ClInclude Include="Source\EggFunctions.h" />
-    <ClInclude Include="Source\ExitDoorFunctions.h" />
     <ClInclude Include="Source\GameFlags.h" />
     <ClInclude Include="Source\GameState.h" />
     <ClInclude Include="Source\GameStateFactory.h" />
     <ClInclude Include="Source\GoCommandHandler.h" />
-    <ClInclude Include="Source\GoldPieceFunctions.h" />
     <ClInclude Include="Source\HelpCommandHandler.h" />
     <ClInclude Include="Source\InputProvider.h" />
     <ClInclude Include="Source\InventoryCommandHandler.h" />
     <ClInclude Include="Source\Item.h" />
     <ClInclude Include="Source\ItemList.h" />
+    <ClInclude Include="Source\Items\BrickFunctions.h" />
+    <ClInclude Include="Source\Items\EggFunctions.h" />
+    <ClInclude Include="Source\Items\ExitDoorFunctions.h" />
+    <ClInclude Include="Source\Items\GoldPieceFunctions.h" />
+    <ClInclude Include="Source\Items\KeyDoorFunctions.h" />
+    <ClInclude Include="Source\Items\KeyFunctions.h" />
     <ClInclude Include="Source\LookCommandHandler.h" />
     <ClInclude Include="Source\QuitCommandHandler.h" />
     <ClInclude Include="Source\Room.h" />
@@ -119,22 +121,24 @@
   <ItemGroup>
     <ClCompile Include="CommandListFactory.c" />
     <ClCompile Include="main.c" />
-    <ClCompile Include="Source\BrickFunctions.c" />
     <ClCompile Include="Source\CommandHandler.c" />
     <ClCompile Include="Source\CommandList.c" />
     <ClCompile Include="Source\DropCommandHandler.c" />
-    <ClCompile Include="Source\EggFunctions.c" />
-    <ClCompile Include="Source\ExitDoorFunctions.c" />
     <ClCompile Include="Source\GameFlags.c" />
     <ClCompile Include="Source\GameState.c" />
     <ClCompile Include="Source\GameStateFactory.c" />
     <ClCompile Include="Source\GoCommandHandler.c" />
-    <ClCompile Include="Source\GoldPieceFunctions.c" />
     <ClCompile Include="Source\HelpCommandHandler.c" />
     <ClCompile Include="Source\InputProvider.c" />
     <ClCompile Include="Source\InventoryCommandHandler.c" />
     <ClCompile Include="Source\Item.c" />
     <ClCompile Include="Source\ItemList.c" />
+    <ClCompile Include="Source\Items\BrickFunctions.c" />
+    <ClCompile Include="Source\Items\EggFunctions.c" />
+    <ClCompile Include="Source\Items\ExitDoorFunctions.c" />
+    <ClCompile Include="Source\Items\GoldPieceFunctions.c" />
+    <ClCompile Include="Source\Items\KeyDoorFunctions.c" />
+    <ClCompile Include="Source\Items\KeyFunctions.c" />
     <ClCompile Include="Source\LookCommandHandler.c" />
     <ClCompile Include="Source\QuitCommandHandler.c" />
     <ClCompile Include="Source\Room.c" />
