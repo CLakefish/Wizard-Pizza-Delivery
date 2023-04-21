@@ -1,9 +1,8 @@
 ﻿
-#include "WorldDataFactory.h" 
+#include "WorldDataFactory.h"
 #include "WorldData.h" 
 #include "Room.h" 
 #include "ItemList.h"
-
 
 //todo: GameItems.h
 #include "Items/BrickFunctions.h"
@@ -25,16 +24,22 @@ Room* Room0_Build()
 	Once you make it to my house, please unlock the door with the key hidden under the mat and bring it upstairs. My legs don't work as good as they used to!
 	*/
 
-	Room_AddRoomExit(room, "Car Door", 1);
+	Room_AddRoomExit(room, "car door", 1);
 	Room_AddRoomExitShortcut(room, "door", 1);
-	Room_AddRoomExitShortcut(room, "car door", 1);
 	Room_AddRoomExitShortcut(room, "d", 1);
 
 	return room;
 }
 
+/*
+todo:
+mat
 
-/* TODO REQUIRED: Build room 1 */
+the mat creates an exit in the room once it is taken
+
+*/
+
+
 Room* Room1_Build()
 {
 	Room* room = NULL;
@@ -47,7 +52,6 @@ Room* Room1_Build()
 	Room_AddRoomExitShortcut(room, "l", 7);
 
 	ItemList_AddItem(Room_GetItemList(room), Key_Build());
-	ItemList_AddItem(Room_GetItemList(room), KeyDoor_Build());
 
 	Room_AddRoomExit(room, "door", 2);
 	Room_AddRoomExitShortcut(room, "north", 2);
@@ -57,25 +61,16 @@ Room* Room1_Build()
 }
 
 
-/* TODO REQUIRED: Build room 2 */
 Room* Room2_Build()
 {
-	/* TODO: Pre-declare a room pointer which we will use to build the new room */
 	Room* room = NULL;
 
-	/* TODO REQUIRED: Call Room_Create with the Room 2 description:
-	"This is room 2.  The room is isolated from the others, but you can see a crack in the east wall, just large enough to get through.\n" */
-	room = Room_Create("This is room 2.\n\n The room is isolated from the others but you can see a crack in the east wall, just large enough to get through.\n");
+	room = Room_Create("You enter the house.\n\n The room is small.\n");
 
+	ItemList_AddItem(Room_GetItemList(room), Key_Build());
 
-	/* TODO REQUIRED: Add an Exit "east" to Room 0 */
-	/* TODO BASIC: Add exit shortcuts for "e" and "crack" */
-
-	Room_AddRoomExit(room, "east", 3);
-	Room_AddRoomExitShortcut(room, "e", 3);
-
-	/* TODO REQUIRED: Add a gold piece to the list of items in the room */
-	ItemList_AddItem(Room_GetItemList(room), GoldPiece_Build(room));
+	Room_AddRoomExit(room, "up", 1);
+	Room_AddRoomExitShortcut(room, "u", 1);
 
 	/* return the new room */
 	return room;
@@ -85,8 +80,16 @@ Room* Room3_Build()
 {
 	Room* room = NULL;
 
-	room = Room_Create("This is the end room. Thanks for playing!");
+	room = Room_Create("You enter the house.\n\n The room is small.\n");
 
+
+	/* TODO REQUIRED: Add an Exit "east" to Room 0 */
+	/* TODO BASIC: Add exit shortcuts for "e" and "crack" */
+
+	Room_AddRoomExit(room, "east", 3);
+	Room_AddRoomExitShortcut(room, "e", 3);
+
+	/* return the new room */
 	return room;
 }
 

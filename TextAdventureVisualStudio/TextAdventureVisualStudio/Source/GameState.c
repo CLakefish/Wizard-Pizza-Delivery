@@ -14,6 +14,9 @@ in the game.
 #include "ItemList.h" /* ItemList_Free */
 #include "GameFlags.h" /* GameFlags_Free */
 
+#include "Room.h" /* Room_Print */
+#include "WorldData.h" /* WorldData_GetRoom */
+
 
 /* Create an empty game state object */
 GameState* GameState_Create()
@@ -120,4 +123,24 @@ void GameState_EndGame(GameState* gameState, const char* message)
 
 	/* set the isRunning state so the game quits on the next loop */
 	gameState->isRunning = false;
+}
+
+void GameState_SetRoom(GameState* gameState, WorldData* worldData, int index)
+{
+	Room* currentRoom; /* the room we are currently in */
+
+	if ((gameState == NULL) || (worldData == NULL))
+	{
+		return; /* take no action if the parameters are invalid */
+	}
+
+	currentRoom = WorldData_GetRoom(worldData, index);
+
+	if (currentRoom == NULL)
+	{
+		return; /* take no action if room is null */
+	}
+
+	gameState->currentRoomIndex = index;
+	Room_Print(currentRoom);
 }

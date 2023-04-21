@@ -15,6 +15,7 @@ directly on the object.
 ******************************************************************************/
 #pragma once
 #include "stdafx.h" /* bool */
+#include "WorldData.h" /* worldData */
 
 typedef struct ItemList ItemList;
 typedef struct GameFlags GameFlags;
@@ -49,3 +50,6 @@ void GameState_ChangeScore(GameState* gameState, int modifier);
 
 /* End the game, with appropriate user information */
 void GameState_EndGame(GameState* gameState, const char* message);
+
+/* Sets the room and prints the room description */
+void GameState_SetRoom(GameState* gameState, WorldData* worldData, int index);

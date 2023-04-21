@@ -9,8 +9,7 @@ This file defines the functions to create a specific item, the "key".
 
 ******************************************************************************/
 #include "stdafx.h" /* NULL, UNREFERENCED_PARAMETER */
-#include "keyFUnctions.h" /* Function declarations */
-#include "GameState.h" /* struct GameState, GameState_ChangeScore, GameState_EndGame */
+#include "GameState.h" /* struct GameState, GameState_ChangeScore, GameState_EndGame, GameState_SetRoom */
 #include "GameFlags.h" /* GameFlags_IsInList, GameFlags_Add */
 #include "Item.h" /* Item_Create */
 
@@ -66,9 +65,8 @@ void Key_Use(CommandContext context, GameState* gameState, WorldData* worldData)
 	/* go to the next room */
 	if (gameState->currentRoomIndex == 1)
 	{
-		//todo: this doesnt work
-		gameState->currentRoomIndex = 2;
 		printf("[You open the door.]\n");
+		GameState_SetRoom(gameState, worldData, 2);
 	}
 	else
 	{
