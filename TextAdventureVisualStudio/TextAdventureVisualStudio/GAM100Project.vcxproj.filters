@@ -82,6 +82,9 @@
     <ClCompile Include="Source\Items\KeyFunctions.c">
       <Filter>WorldData\Items</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Items\MatFunctions.c">
+      <Filter>WorldData\Items</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\CommandContext.h">
@@ -181,6 +184,9 @@
       <Filter>WorldData\Items</Filter>
     </ClInclude>
     <ClInclude Include="Source\Items\KeyFunctions.h">
+      <Filter>WorldData\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Items\MatFunctions.h">
       <Filter>WorldData\Items</Filter>
     </ClInclude>
   </ItemGroup>

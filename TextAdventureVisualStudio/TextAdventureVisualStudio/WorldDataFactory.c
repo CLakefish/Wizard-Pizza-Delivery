@@ -9,6 +9,7 @@
 #include "Items/GoldPieceFunctions.h" 
 #include "Items/KeyFunctions.h" 
 #include "Items/KeyDoorFunctions.h" 
+#include "Items/MatFunctions.h"
 
 
 /* TODO REQUIRED: Build room 0 */
@@ -51,7 +52,8 @@ Room* Room1_Build()
 	Room_AddRoomExitShortcut(room, "leave", 7);
 	Room_AddRoomExitShortcut(room, "l", 7);
 
-	ItemList_AddItem(Room_GetItemList(room), Key_Build());
+	ItemList_AddItem(Room_GetItemList(room), Mat_Build());
+	//ItemList_AddItem(Room_GetItemList(room), Key_Build());
 
 	Room_AddRoomExit(room, "door", 2);
 	Room_AddRoomExitShortcut(room, "north", 2);
@@ -60,8 +62,21 @@ Room* Room1_Build()
 	return room;
 }
 
-
 Room* Room2_Build()
+{
+	Room* room = NULL;
+
+	room = Room_Create("You go down the ladder.\n");
+	
+	Room_AddRoomExit(room, "up", 1);
+	Room_AddRoomExitShortcut(room, "u", 1);
+	Room_AddRoomExitShortcut(room, "ladder", 1);
+
+	return room;
+}
+
+
+Room* Room3_Build()
 {
 	Room* room = NULL;
 
@@ -71,23 +86,6 @@ Room* Room2_Build()
 
 	Room_AddRoomExit(room, "up", 1);
 	Room_AddRoomExitShortcut(room, "u", 1);
-
-	/* return the new room */
-	return room;
-}
-
-Room* Room3_Build()
-{
-	Room* room = NULL;
-
-	room = Room_Create("You enter the house.\n\n The room is small.\n");
-
-
-	/* TODO REQUIRED: Add an Exit "east" to Room 0 */
-	/* TODO BASIC: Add exit shortcuts for "e" and "crack" */
-
-	Room_AddRoomExit(room, "east", 3);
-	Room_AddRoomExitShortcut(room, "e", 3);
 
 	/* return the new room */
 	return room;
