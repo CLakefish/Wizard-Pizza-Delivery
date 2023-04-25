@@ -4,6 +4,11 @@
         "brickfunctions.h": "c",
         "keydoorfunctions.h": "c",
         "gamestate.h": "c",
-        "itemlist.h": "c"
+        "itemlist.h": "c",
+        "stdafx.h": "c",
+        "commandlist.h": "c",
+        "commanddata.h": "c",
+        "helpcommandhandler.h": "c",
+        "commandtypes.h": "c"
     }
 }

@@ -25,21 +25,11 @@ Room* Room0_Build()
 	Once you make it to my house, please unlock the door with the key hidden under the mat and bring it upstairs. My legs don't work as good as they used to!
 	*/
 
-	Room_AddRoomExit(room, "car door", 1);
-	Room_AddRoomExitShortcut(room, "door", 1);
-	Room_AddRoomExitShortcut(room, "d", 1);
+	Room_AddRoomExit(room, "north", 1);
+	Room_AddRoomExitShortcut(room, "n", 1);
 
 	return room;
 }
-
-/*
-todo:
-mat
-
-the mat creates an exit in the room once it is taken
-
-*/
-
 
 Room* Room1_Build()
 {
@@ -53,11 +43,6 @@ Room* Room1_Build()
 	Room_AddRoomExitShortcut(room, "l", 7);
 
 	ItemList_AddItem(Room_GetItemList(room), Mat_Build());
-	//ItemList_AddItem(Room_GetItemList(room), Key_Build());
-
-	Room_AddRoomExit(room, "door", 2);
-	Room_AddRoomExitShortcut(room, "north", 2);
-	Room_AddRoomExitShortcut(room, "n", 2);
 
 	return room;
 }

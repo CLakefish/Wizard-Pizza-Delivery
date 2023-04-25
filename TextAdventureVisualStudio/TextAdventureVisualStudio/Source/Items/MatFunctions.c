@@ -12,8 +12,11 @@ This file defines the functions to create a specific item, the "mat".
 #include "GameFlags.h" /* GameFlags_IsInList, GameFlags_Add */
 #include "Item.h" /* Item_Create */
 
+#include "DropCommandHandler.h"
+
 #include "Room.h" /*  */
-#include "ItemList.h"
+#include "ItemList.h" /*  */
+#include "Items/KeyFunctions.h"
 
 typedef struct WorldData WorldData;
 
@@ -40,21 +43,70 @@ void Mat_Take(CommandContext context, GameState* gameState, WorldData* worldData
 
 	currentRoom = WorldData_GetRoom(worldData, 1);
 
-	printf("What's this? The mat wasn't a mat at all, but a wooden door hiding an entire room underneath it!\n\nYou can now go down.\n");
+	if (gameState->currentRoomIndex == 1)
+	{
+		printf("What's this? The mat was hiding an entire room underneath it!\n\nYou can now go down.\n");
+	}
+	else if (gameState->currentRoomIndex == 2)
+	{
+		printf("As you pick up the mat, you see that a key has magically appeared under the mat!\n\nYou now have a key.\n");
+		ItemList_AddItem(&gameState->inventory, Key_Build());
+		
+		/* remove the mat from the player's invetory */
+		item = ItemList_FindItem(gameState->inventory, "mat");
+		gameState->inventory = ItemList_Remove(gameState->inventory, item);
+	}
 
 	Room_AddRoomExit(currentRoom, "down", 2);
 	Room_AddRoomExitShortcut(currentRoom, "d", 2);
 	Room_AddRoomExitShortcut(currentRoom, "mat", 2);
+}
+
+void Mat_Drop(CommandContext context, GameState* gameState, WorldData* worldData)
+{
+	/* avoid W4 warnings on unused parameters - this function conforms to a function typedef */
+	UNREFERENCED_PARAMETER(context);
+	UNREFERENCED_PARAMETER(worldData);
+
+	if (gameState->currentRoomIndex == 2)
+	{
+		printf("You place down the mat. You hear a 'ding!' sound, but you still don't see a key.\n");
+	}
+}
+
+void Mat_Use(CommandContext context, GameState* gameState, WorldData* worldData)
+{
+	/* avoid W4 warnings on unused parameters - this function conforms to a function typedef */
+	UNREFERENCED_PARAMETER(context);
+	UNREFERENCED_PARAMETER(worldData);
+
+	/*this is just copiedc and pasted from the drop command handler, I could create a better system for making the use function and drop function the same but I'm not taking the time to decouple stuff in someone else's code */
+
+	/* find the dropped item in the player's inventory */
+	Item* droppedItem = ItemList_FindItem(gameState->inventory, "mat");
+	
+	if (droppedItem == NULL)
+	{
+		//this shouldn't happen, but who knows what could happen in this messed up world we live in
+		return;
+	}
+
+	/* remove the item from inventory and assign the inventory pointer back to the game state */
+	gameState->inventory = ItemList_Remove(gameState->inventory, droppedItem);
+
+	/* add the item to the room's item list */
+	Room* room = WorldData_GetRoom(worldData, gameState->currentRoomIndex);
+	ItemList** roomItemPtr = Room_GetItemList(room);
+	ItemList_Add(*roomItemPtr, droppedItem);
 
 
-	/* remove the mat from the player's invetory */
-	item = ItemList_FindItem(gameState->inventory, "mat");
-	gameState->inventory = ItemList_Remove(gameState->inventory, item);
+	//drop
+	Mat_Drop(context, gameState, worldData);
 }
 
 /* Build a "mat" object */
 Item* Mat_Build()
 {
 	/* Create a "mat" item, using the functions defined in this file */
-	return Item_Create("mat", NULL, true, NULL, Mat_Take, NULL);
+	return Item_Create("mat", NULL, true, Mat_Drop, Mat_Take, Mat_Drop);
 }
