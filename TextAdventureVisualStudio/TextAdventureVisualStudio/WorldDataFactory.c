@@ -15,15 +15,10 @@
 /* TODO REQUIRED: Build room 0 */
 Room* Room0_Build()
 {
+	//by carson
 	Room* room = NULL;
 
-	room = Room_Create("You're in your Pizza Delivery vehicle, (Used Red PT Cruiser) you finally made it to your destination.\n\"What kind of guy lives in a tower in the middle of nowhere on a steep cliff?\"\nYou look at the pizza, and see there is a list of special instructions.\n\n \"\"\n");
-
-	/*
-	Delivery Instructions:
-	
-	Once you make it to my house, please unlock the door with the key hidden under the mat and bring it upstairs. My legs don't work as good as they used to!
-	*/
+	room = Room_Create("You're in your Pizza Delivery vehicle, (Used Red PT Cruiser) you finally made it to your destination.\n\"What kind of guy lives in a tower in the middle of nowhere on a steep cliff?\"\nYou look at the pizza, and see there is a list of special instructions.\n\n\"Once you make it to my house, please unlock the door with the key hidden under the mat and bring it upstairs. My legs don't work as good as they used to!\"\n");
 
 	Room_AddRoomExit(room, "north", 1);
 	Room_AddRoomExitShortcut(room, "n", 1);
@@ -33,6 +28,7 @@ Room* Room0_Build()
 
 Room* Room1_Build()
 {
+	//by carson and preston
 	Room* room = NULL;
 
 	room = Room_Create("The tower looms over you.\n You look down to see the doormat, it's marked with the words \"A Wizard's Welcome!\"\n\nYou can either get the key like the delivery instructions said, or you can leave it here and call it a night.\n");
@@ -49,6 +45,7 @@ Room* Room1_Build()
 
 Room* Room2_Build()
 {
+	//by preston
 	Room* room = NULL;
 
 	room = Room_Create("You go down the ladder.\n\nYou see a sign, it reads: \"What is the name of the wizard's dog?\"\nYou're unsure of what to do, as this game has no \"say\" command.\n");
