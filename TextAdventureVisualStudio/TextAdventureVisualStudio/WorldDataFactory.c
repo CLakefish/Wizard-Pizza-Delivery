@@ -10,6 +10,7 @@
 #include "Items/KeyFunctions.h" 
 #include "Items/KeyDoorFunctions.h" 
 #include "Items/MatFunctions.h"
+#include "Items/StickFunctions.h" 
 
 
 /* TODO REQUIRED: Build room 0 */
@@ -65,14 +66,54 @@ Room* Room3_Build()
 {
 	Room* room = NULL;
 
-	room = Room_Create("You enter the tower.\n\nThe first room is small.\n");
+	room = Room_Create("You enter the tower.\n\n The approach the first room, following a large staircase that took 5 minutes to go up. \n The room is very cluttered, filled with books and shelves that have been thrown about or knocked over.\n\n Theres a door on the other side you can just barely spot\n To your left is a door which is slightly open, and in front of you is a small hole big enough to fit the pizza in.\n");
 
 	ItemList_AddItem(Room_GetItemList(room), Key_Build());
 
-	Room_AddRoomExit(room, "up", 1);
-	Room_AddRoomExitShortcut(room, "u", 1);
+	Room_AddRoomExit(room, "left", 4);
+	Room_AddRoomExitShortcut(room, "l", 4);
+
+	Room_AddRoomExit(room, "hole", 5);
+	Room_AddRoomExitShortcut(room, "h", 5);
 
 	/* return the new room */
+	return room;
+}
+
+Room* Room4_Build()
+{
+	Room* room = NULL;
+
+	room = Room_Create("You enter into the left room, just as messy as the room before.\n\nTheres another door on the other side, but a knocked over bookshelf blocks your path.\n");
+
+	Room_AddRoomExit(room, "back", 3);
+	Room_AddRoomExitShortcut(room, "b", 3);
+
+	return room;
+}
+
+Room* Room5_Build()
+{
+	Room* room = NULL;
+
+	room = Room_Create("You squeeze your way through the gap, holding the pizza in the air.\n\nYou can't make it to the door cause of somethin idk, but there is a cool stick in the corner.\n\n");
+
+	ItemList_AddItem(Room_GetItemList(room), Stick_Build());
+
+	Room_AddRoomExit(room, "back", 3);
+	Room_AddRoomExitShortcut(room, "b", 3);
+
+	return room;
+}
+
+Room* Room6_Build()
+{
+	Room* room = NULL;
+
+	room = Room_Create("");
+
+	Room_AddRoomExit(room, "door", 7);
+	
 	return room;
 }
 
@@ -91,6 +132,10 @@ WorldData* CreateInitialWorldData()
 	WorldData_SetRoom(worldData, 1, Room1_Build());
 	WorldData_SetRoom(worldData, 2, Room2_Build());
 	WorldData_SetRoom(worldData, 3, Room3_Build());
+
+	WorldData_SetRoom(worldData, 4, Room4_Build());
+	WorldData_SetRoom(worldData, 5, Room5_Build());
+	WorldData_SetRoom(worldData, 6, Room6_Build());
 
 	/* return the new object */
 	return worldData;

@@ -108,6 +108,7 @@
     <ClInclude Include="Source\Items\KeyDoorFunctions.h" />
     <ClInclude Include="Source\Items\KeyFunctions.h" />
     <ClInclude Include="Source\Items\MatFunctions.h" />
+    <ClInclude Include="Source\Items\StickFunctions.h" />
     <ClInclude Include="Source\LookCommandHandler.h" />
     <ClInclude Include="Source\QuitCommandHandler.h" />
     <ClInclude Include="Source\Room.h" />
@@ -141,6 +142,7 @@
     <ClCompile Include="Source\Items\KeyDoorFunctions.c" />
     <ClCompile Include="Source\Items\KeyFunctions.c" />
     <ClCompile Include="Source\Items\MatFunctions.c" />
+    <ClCompile Include="Source\Items\StickFunctions.c" />
     <ClCompile Include="Source\LookCommandHandler.c" />
     <ClCompile Include="Source\QuitCommandHandler.c" />
     <ClCompile Include="Source\Room.c" />
