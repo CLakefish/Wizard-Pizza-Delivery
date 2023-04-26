@@ -28,6 +28,8 @@ void Key_Take(CommandContext context, GameState* gameState, WorldData* worldData
 	{
 		return; /* take no action if the parameters are invalid */
 	}
+	
+	//todo: maybe get rid of this? there is no point to having a score in the game's current state
 
 	/* check if the key has already been scored */
 	if (!GameFlags_IsInList(gameState->gameFlags, "keyScored"))
@@ -49,24 +51,11 @@ void Key_Use(CommandContext context, GameState* gameState, WorldData* worldData)
 	UNREFERENCED_PARAMETER(context);
 	UNREFERENCED_PARAMETER(worldData);
 
-	/* find the mat in the user's inventory */
-	//mat = ItemList_FindItem(gameState->inventory, "mat");
-
-	/* check both items */
-
-	/* uncomment once mat is available
-	if (mat != NULL)
-	{
-		printf("I have to return the mat before I can use the door.\n");
-		return;
-	}
-	*/
-
 	/* go to the next room */
 	if (gameState->currentRoomIndex == 1)
 	{
-		printf("[You open the door.]\n");
-		GameState_SetRoom(gameState, worldData, 2);
+		printf("You open the door.\n");
+		GameState_SetRoom(gameState, worldData, 3);
 	}
 	else
 	{

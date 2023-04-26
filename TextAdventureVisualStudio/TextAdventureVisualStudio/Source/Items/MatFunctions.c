@@ -16,6 +16,7 @@ This file defines the functions to create a specific item, the "mat".
 
 #include "Room.h" /*  */
 #include "ItemList.h" /*  */
+#include "CommandHandler.h" /* Function declarations */
 #include "Items/KeyFunctions.h"
 
 typedef struct WorldData WorldData;
@@ -80,7 +81,7 @@ void Mat_Use(CommandContext context, GameState* gameState, WorldData* worldData)
 	UNREFERENCED_PARAMETER(context);
 	UNREFERENCED_PARAMETER(worldData);
 
-	/*this is just copiedc and pasted from the drop command handler, I could create a better system for making the use function and drop function the same but I'm not taking the time to decouple stuff in someone else's code */
+	/*this is just copied and pasted from the drop command handler, I could create a better system for making the use function and drop function the same but I'm not taking the time to decouple stuff in someone else's code */
 
 	/* find the dropped item in the player's inventory */
 	Item* droppedItem = ItemList_FindItem(gameState->inventory, "mat");
@@ -96,9 +97,9 @@ void Mat_Use(CommandContext context, GameState* gameState, WorldData* worldData)
 
 	/* add the item to the room's item list */
 	Room* room = WorldData_GetRoom(worldData, gameState->currentRoomIndex);
-	ItemList** roomItemPtr = Room_GetItemList(room);
-	ItemList_Add(*roomItemPtr, droppedItem);
-
+	
+	ItemList** roomItemsPtr = Room_GetItemList(room);
+	*roomItemsPtr = ItemList_Add(*roomItemsPtr, droppedItem);
 
 	//drop
 	Mat_Drop(context, gameState, worldData);
@@ -108,5 +109,5 @@ void Mat_Use(CommandContext context, GameState* gameState, WorldData* worldData)
 Item* Mat_Build()
 {
 	/* Create a "mat" item, using the functions defined in this file */
-	return Item_Create("mat", NULL, true, Mat_Drop, Mat_Take, Mat_Drop);
+	return Item_Create("mat", NULL, true, Mat_Use, Mat_Take, Mat_Drop);
 }

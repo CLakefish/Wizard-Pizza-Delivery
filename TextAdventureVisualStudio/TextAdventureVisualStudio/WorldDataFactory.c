@@ -35,7 +35,7 @@ Room* Room1_Build()
 {
 	Room* room = NULL;
 
-	room = Room_Create("You step outside of your car and walk up to the front door. The tower looms over you.\n You look down to see the doormat, it's marked with the words \"A Wizard's Welcome!\"\n\nYou can either get the key like the delivery instructions said, or you can leave it here and call it a night.\n");
+	room = Room_Create("The tower looms over you.\n You look down to see the doormat, it's marked with the words \"A Wizard's Welcome!\"\n\nYou can either get the key like the delivery instructions said, or you can leave it here and call it a night.\n");
 
 	//the difference between Room_AddRoomExit and Room_AddRoomExitShortcut is that shortcut does not appear in the help menu
 	Room_AddRoomExit(room, "exit", 7);
@@ -51,7 +51,7 @@ Room* Room2_Build()
 {
 	Room* room = NULL;
 
-	room = Room_Create("You go down the ladder.\n");
+	room = Room_Create("You go down the ladder.\n\nYou see a sign, it reads: \"What is the name of the wizard's dog?\"\nYou're unsure of what to do, as this game has no \"say\" command.\n");
 	
 	Room_AddRoomExit(room, "up", 1);
 	Room_AddRoomExitShortcut(room, "u", 1);
@@ -65,7 +65,7 @@ Room* Room3_Build()
 {
 	Room* room = NULL;
 
-	room = Room_Create("You enter the house.\n\n The room is small.\n");
+	room = Room_Create("You enter the tower.\n\nThe first room is small.\n");
 
 	ItemList_AddItem(Room_GetItemList(room), Key_Build());
 
