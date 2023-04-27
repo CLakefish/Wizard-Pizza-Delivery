@@ -114,11 +114,21 @@ Room* Room6_Build()
 	return room;
 }
 
+Room* Room7_Build()
+{
+	// Description: "You hear loud crashing and bangs, as footsteps near the door. The door swings open, revealing a small cobblestone room with a cauldron inside, emitting a light green light.\n\n \"Finally! The last ingredient! Thanks for following my instructions!/"\n\n The wizard rummages through his blue robe pocket, and swings out a leather wallet.\n\n \"I believe I owe you $13... lets see here, one... two... etc...\"\n\n You've completed your task, you can either leave or go inside the wizards' room."
+}
+
+Room* Room8_Build()
+{
+	// Description: "You enter the wizard's room, but its pretty weird to enter in without asking. You peak into the cauldron, as the pizza is lowered into it. As the pizza crust touches the strange green liquid, it starts to bubble. The liquid becomes brighter and brighter. It starts to swirl around. Suddenly, the cheese in the pizza starts to expand. The cauldron releases a blast of cheese up into the air. The wizard cheers, "Yes, YES!" The cheese blows a hole into the ceiling of the tower. The tower starts to rumble. You need to leave this place. You race down the stairs, get out the door, and run to your Red PT Cruiser. You drive away as a tsunami of cheese overtakes the area."
+}
+
 WorldData* CreateInitialWorldData()
 {
 	WorldData* worldData;
 
-	int roomCount = 7;
+	int roomCount = 7 + 1;
 
 	/* create the new WorldData object with 3 rooms */
 	worldData = WorldData_Create("Welcome to my GAM100 Game!\n\n", roomCount);
@@ -133,6 +143,8 @@ WorldData* CreateInitialWorldData()
 	WorldData_SetRoom(worldData, 4, Room4_Build());
 	WorldData_SetRoom(worldData, 5, Room5_Build());
 	WorldData_SetRoom(worldData, 6, Room6_Build());
+
+	WorldData_SetRoom()
 
 	/* return the new object */
 	return worldData;
