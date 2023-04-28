@@ -3,6 +3,7 @@
 #include "WorldData.h" 
 #include "Room.h" 
 #include "ItemList.h"
+#include "KeyFunctions.h"
 #include "BrickFunctions.h"
 #include "GoldPieceFunctions.h" 
 #include "ExitDoorFunctions.h" 
