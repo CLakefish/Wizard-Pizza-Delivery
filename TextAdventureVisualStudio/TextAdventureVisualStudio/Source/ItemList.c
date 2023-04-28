@@ -55,6 +55,7 @@ ItemList* ItemList_Add(ItemList* itemList, Item* item)
 	newItemList->next = itemList;
 
 	/* return the new node as the new head */
+
 	return newItemList;
 }
 

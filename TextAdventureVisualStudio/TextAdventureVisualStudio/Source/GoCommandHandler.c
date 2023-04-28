@@ -21,7 +21,7 @@ the user from one room to another using defined exits.
 void HandleGoCommand(CommandData *command, GameState *gameState, WorldData *worldData)
 {
 	Room* currentRoom; /* the room we are currently in */
-	int nextRoomIndex; /* the index of hte next room */
+	int nextRoomIndex; /* the index of the next room */
 
 	/* safety check on the parameters */
 	if ((command == NULL) || (command->noun == NULL) || (gameState == NULL) || (worldData == NULL)) 
