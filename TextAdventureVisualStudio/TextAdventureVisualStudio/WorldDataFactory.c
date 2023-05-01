@@ -107,28 +107,15 @@ Room* Room6_Build()
 {
 	Room* room = NULL;
 
-	room = Room_Create("");
+	room = Room_Create("You hear loud crashing and bangs, as footsteps near the door. The door swings open, revealing a small cobblestone room with a cauldron inside, emitting a light green light.\n\n \"Finally! The last ingredient! Thanks for following my instructions!\"\n\n The wizard rummages through his blue robe pocket, and swings out a leather wallet.\n\n \"I believe I owe you $13... lets see here, one... two... etc...\"\n\n You've completed your task, you can either leave or go inside the wizards' room.");
 
-	Room_AddRoomExit(room, "door", 7);
-	
+	Room_AddRoomExit(room, "wizard room", 7);
+	Room_AddRoomExitShortcut(room, "wr", 7);
+
 	return room;
 }
 
 Room* Room7_Build()
-{
-	Room* room = NULL;
-
-	room = Room_Create("You hear loud crashing and bangs, as footsteps near the door. The door swings open, revealing a small cobblestone room with a cauldron inside, emitting a light green light.\n\n \"Finally! The last ingredient! Thanks for following my instructions!\"\n\n The wizard rummages through his blue robe pocket, and swings out a leather wallet.\n\n \"I believe I owe you $13... lets see here, one... two... etc...\"\n\n You've completed your task, you can either leave or go inside the wizards' room.");
-
-	Room_AddRoomExit(room, "wizard room", 8);
-	Room_AddRoomExitShortcut(room, "wr", 8);
-	Room_AddRoomExit(room, "leave", NULL);
-	Room_AddRoomExitShortcut(room, "l", NULL);
-
-	return room;
-}
-
-Room* Room8_Build()
 {
 	Room* room = NULL;
 
@@ -149,15 +136,18 @@ WorldData* CreateInitialWorldData()
 	/* build each room and assign them to the world data */
 	WorldData_SetRoom(worldData, 0, Room0_Build());
 
+	//preston's rooms
 	WorldData_SetRoom(worldData, 1, Room1_Build());
 	WorldData_SetRoom(worldData, 2, Room2_Build());
-	WorldData_SetRoom(worldData, 3, Room3_Build());
 
+	//carson's rooms
+	WorldData_SetRoom(worldData, 3, Room3_Build());
 	WorldData_SetRoom(worldData, 4, Room4_Build());
 	WorldData_SetRoom(worldData, 5, Room5_Build());
-	WorldData_SetRoom(worldData, 6, Room6_Build());
 
-	WorldData_SetRoom()
+	//hugo's rooms
+	WorldData_SetRoom(worldData, 6, Room6_Build());
+	WorldData_SetRoom(worldData, 7, Room7_Build());
 
 	/* return the new object */
 	return worldData;
