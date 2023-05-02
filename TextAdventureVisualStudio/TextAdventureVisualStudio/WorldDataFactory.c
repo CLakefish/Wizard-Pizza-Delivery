@@ -114,7 +114,7 @@ WorldData* CreateInitialWorldData()
 	int roomCount = 7 + 1;
 
 	/* create the new WorldData object with 3 rooms */
-	worldData = WorldData_Create("Welcome to my GAM100 Game!\n\n", roomCount);
+	worldData = WorldData_Create("Welcome to Wizard Pizza Delivery!\n\n", roomCount);
 
 	/* build each room and assign them to the world data */
 	WorldData_SetRoom(worldData, 0, Room0_Build());
