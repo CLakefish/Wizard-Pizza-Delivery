@@ -121,7 +121,7 @@ Room* Room7_Build()
 
 	room = Room_Create("You enter the wizard's room, but its pretty weird to enter in without asking. You peek into the cauldron, as the pizza is lowered into it. As the pizza crust touches the strange green liquid, it starts to bubble. The liquid becomes brighter and brighter. It starts to swirl around.\n\n Suddenly, the cheese in the pizza starts to expand. The cauldron releases a blast of cheese up into the air. The wizard cheers, \"Yes, YES!\" The cheese blows a hole into the ceiling of the tower.\n\n The tower starts to rumble. You need to leave this place. \n\n You race down the stairs, get out the door, and run to your Red PT Cruiser. You drive away as a tsunami of cheese overtakes the area.");
 
-	return room
+	return room;
 }	
 
 WorldData* CreateInitialWorldData()
