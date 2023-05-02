@@ -5,6 +5,7 @@
 #include "ItemList.h"
 
 //todo: GameItems.h
+#include "Items/PizzaFunctions.h"
 #include "Items/BrickFunctions.h"
 #include "Items/GoldPieceFunctions.h" 
 #include "Items/KeyFunctions.h" 
@@ -21,8 +22,7 @@ Room* Room0_Build()
 
 	room = Room_Create("You're in your Pizza Delivery vehicle, (Used Red PT Cruiser) you finally made it to your destination.\n\"What kind of guy lives in a tower in the middle of nowhere on a steep cliff?\"\nYou look at the pizza, and see there is a list of special instructions.\n\n\"Once you make it to my house, please unlock the door with the key hidden under the mat and bring it upstairs. My legs don't work as good as they used to!\"\n");
 
-	Room_AddRoomExit(room, "north", 1);
-	Room_AddRoomExitShortcut(room, "n", 1);
+	ItemList_AddItem(Room_GetItemList(room), Pizza_Build());
 
 	return room;
 }
@@ -32,12 +32,7 @@ Room* Room1_Build()
 	//by carson and preston
 	Room* room = NULL;
 
-	room = Room_Create("The tower looms over you.\n You look down to see the doormat, it's marked with the words \"A Wizard's Welcome!\"\n\nYou can either get the key like the delivery instructions said, or you can leave it here and call it a night.\n");
-
-	//the difference between Room_AddRoomExit and Room_AddRoomExitShortcut is that shortcut does not appear in the help menu
-	Room_AddRoomExit(room, "exit", 7);
-	Room_AddRoomExitShortcut(room, "leave", 7);
-	Room_AddRoomExitShortcut(room, "l", 7);
+	room = Room_Create("The tower looms over you.\nYou look down to see the doormat, it's marked with the words \"A Wizard's Welcome!\"\nNow you need to get the key like the delivery instructions said.\n");
 
 	ItemList_AddItem(Room_GetItemList(room), Mat_Build());
 
@@ -63,7 +58,7 @@ Room* Room3_Build()
 {
 	Room* room = NULL;
 
-	room = Room_Create("You enter the tower.\n\n The approach the first room, following a large staircase that took 5 minutes to go up. \n The room is very cluttered, filled with books and shelves that have been thrown about or knocked over.\n\n Theres a door on the other side you can just barely spot\n To your left is a door which is slightly open, and in front of you is a small hole big enough to fit the pizza in.\n");
+	room = Room_Create("You enter the tower.\n\n The approach the first room, following a large staircase that took 5 minutes to go up. \nThe room is very cluttered, filled with books and shelves that have been thrown about or knocked over.\n\nThere's a door on the other side you can just barely spot\nTo your left is a slightly open door, and in front of you is a small hole big enough to fit the pizza in.\n");
 
 	ItemList_AddItem(Room_GetItemList(room), Key_Build());
 
@@ -107,22 +102,10 @@ Room* Room6_Build()
 {
 	Room* room = NULL;
 
-	room = Room_Create("You hear loud crashing and bangs, as footsteps near the door. The door swings open, revealing a small cobblestone room with a cauldron inside, emitting a light green light.\n\n \"Finally! The last ingredient! Thanks for following my instructions!\"\n\n The wizard rummages through his blue robe pocket, and swings out a leather wallet.\n\n \"I believe I owe you $13... lets see here, one... two... etc...\"\n\n You've completed your task, you can either leave or go inside the wizards' room.");
-
-	Room_AddRoomExit(room, "wizard room", 7);
-	Room_AddRoomExitShortcut(room, "wr", 7);
+	room = Room_Create("You hear loud crashing and bangs, as footsteps near the door. The door swings open, revealing a small cobblestone room with a cauldron inside, emitting a light green light.\n\n\"Finally! The last ingredient! Thanks for following my instructions!\"\n\nThe wizard rummages through his blue robe pocket, and swings out a leather wallet.\n\n\"I believe I owe you $13... lets see here, one... two... etc...\"\n\nNow all you have to do is give the pizza to the wizard.\n");
 
 	return room;
 }
-
-Room* Room7_Build()
-{
-	Room* room = NULL;
-
-	room = Room_Create("You enter the wizard's room, but its pretty weird to enter in without asking. You peek into the cauldron, as the pizza is lowered into it. As the pizza crust touches the strange green liquid, it starts to bubble. The liquid becomes brighter and brighter. It starts to swirl around.\n\n Suddenly, the cheese in the pizza starts to expand. The cauldron releases a blast of cheese up into the air. The wizard cheers, \"Yes, YES!\" The cheese blows a hole into the ceiling of the tower.\n\n The tower starts to rumble. You need to leave this place. \n\n You race down the stairs, get out the door, and run to your Red PT Cruiser. You drive away as a tsunami of cheese overtakes the area.");
-
-	return room;
-}	
 
 WorldData* CreateInitialWorldData()
 {
@@ -147,7 +130,6 @@ WorldData* CreateInitialWorldData()
 
 	//hugo's rooms
 	WorldData_SetRoom(worldData, 6, Room6_Build());
-	WorldData_SetRoom(worldData, 7, Room7_Build());
 
 	/* return the new object */
 	return worldData;

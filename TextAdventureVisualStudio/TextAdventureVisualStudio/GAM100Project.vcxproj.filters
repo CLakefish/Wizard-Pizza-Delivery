@@ -88,6 +88,9 @@
     <ClCompile Include="Source\Items\StickFunctions.c">
       <Filter>WorldData\Items</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Items\PizzaFunctions.c">
+      <Filter>WorldData\Items</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\CommandContext.h">
@@ -193,6 +196,9 @@
       <Filter>WorldData\Items</Filter>
     </ClInclude>
     <ClInclude Include="Source\Items\StickFunctions.h">
+      <Filter>WorldData\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Items\PizzaFunctions.h">
       <Filter>WorldData\Items</Filter>
     </ClInclude>
   </ItemGroup>

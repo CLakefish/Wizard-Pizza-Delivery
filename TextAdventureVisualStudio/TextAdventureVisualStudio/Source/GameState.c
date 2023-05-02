@@ -115,9 +115,6 @@ void GameState_EndGame(GameState* gameState, const char* message)
 		printf(message);
 	}
 
-	/* output the final score */
-	printf("Your final score is %d.\n\n", gameState->score);
-
 	/* output a clean goodbye message, so the user knows the game is exiting intentionally */
 	printf("Goodbye!\n\n");
 

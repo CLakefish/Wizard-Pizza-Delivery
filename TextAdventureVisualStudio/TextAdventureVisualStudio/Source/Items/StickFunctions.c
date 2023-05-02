@@ -31,7 +31,7 @@ void Stick_Take(CommandContext context, GameState* gameState, WorldData* worldDa
 	}
 
 	/* Give the user a hint about how the brick might be used, whenever it is picked up. */
-	printf("The stick is oddly light with the words \"Uhhh handle with care\" enscribed into it.\n");
+	printf("The stick is oddly light with the words \"Uhhh... handle with care\" enscribed into it.\n");
 }
 
 
@@ -49,7 +49,9 @@ void Stick_Use(CommandContext context, GameState* gameState, WorldData* worldDat
 	{
 		currentRoom = WorldData_GetRoom(worldData, 4);
 
-		printf("You flick the stick with your wrist and a bolt of lightning shoots out, vaporizing the bookshelf infront of you\n\n Yeah maybe that wasn't a good idea\n\nYou make it to the other side, and see that the entryway is very clean.The wooden door on your left has sounds coming from inside it, almost a metal clang.\n\n");
+		printf("You flick the stick with your wrist and a bolt of lightning shoots out, vaporizing the bookshelf in front of you\n\nYeah maybe that wasn't a good idea...\n\nYou make it to the other side, and see that the entryway is very clean. The wooden door on your left has sounds coming from inside of it. It sounds like metal clanging.\n\n");
+
+		printf("You can now go through the \"door\" exit");
 
 		Room_AddRoomExit(currentRoom, "door", 6);
 		Room_AddRoomExitShortcut(currentRoom, "d", 6);
